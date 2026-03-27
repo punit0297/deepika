@@ -94,7 +94,7 @@
             display: flex; align-items: center; gap: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
-        #play-btn { transition: transform 0.2s active { transform: scale(0.9); } }
+        #play-btn { transition: transform 0.2s; }
         input[type=range] { accent-color: var(--gold); width: 80px; cursor: pointer; }
 
         .photo-frame {
@@ -130,12 +130,13 @@
         .btn-maps:hover { background: var(--gold); color: #000; transform: translateY(-3px); }
 
         .made-by {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: var(--gold);
-            opacity: 0.7;
-            margin-top: 20px;
-            font-weight: 300;
+            font-size: 0.8rem; letter-spacing: 2px;
+            color: var(--gold); opacity: 0.7;
+            margin-top: 20px; font-weight: 300;
+        }
+
+        @media (max-width: 600px) {
+            .glass-card { padding: 2rem; margin: 20px 10px; }
         }
     </style>
 </head>
@@ -175,42 +176,38 @@
             <p style="letter-spacing: 6px; font-weight: 300; margin-top: 20px;">20 APRIL 2026 • UJJAIN</p>
         </section>
 
-<section id="couple" class="center">
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
-        
-        <div class="glass-card" style="max-width: 380px; margin: 10px;">
-            <div class="photo-frame"><img src="tej.jpeg" alt="Groom"></div>
-            <h2 class="gold-glow">Tejendra</h2>
-            <p>S/o Mr. Ravindra Oberoi<br>& Mrs. Narendra Oberoi</p>
-        </div>
+        <section id="couple" class="center">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
+                <div class="glass-card" style="max-width: 380px; margin: 10px;">
+                    <div class="photo-frame"><img src="tej.jpeg" alt="Groom"></div>
+                    <h2 class="gold-glow">Tejendra</h2>
+                    <p>S/o Mr. Ravindra Oberoi<br>& Mrs. Narendra Oberoi</p>
+                </div>
 
-        <div style="display: flex; flex-direction: column; align-items: center; min-width: 120px; padding: 20px;">
-            <div class="gold-glow" style="font-size: 5rem; line-height: 1; margin-bottom: 10px; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));">
-                ☬
-            </div>
-            <div class="gold-glow" style="letter-spacing: 8px; font-size: 1.5rem; font-weight: bold;">
-                WEDS
-            </div>
-        </div>
+                <div style="display: flex; flex-direction: column; align-items: center; min-width: 120px; padding: 20px;">
+                    <div class="gold-glow" style="font-size: 5rem; line-height: 1; margin-bottom: 10px; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));">
+                        ☬
+                    </div>
+                    <div class="gold-glow" style="letter-spacing: 8px; font-size: 1.5rem; font-weight: bold;">
+                        WEDS
+                    </div>
+                </div>
 
-        <div class="glass-card" style="max-width: 380px; margin: 10px;">
-            <div class="photo-frame"><img src="deepika.jpeg" alt="Bride"></div>
-            <h2 class="gold-glow">Deepika</h2>
-            <p>D/o Mr. Kamal Kishor Gandhi<br>& Mrs. Jyoti Gandhi</p>
-        </div>
+                <div class="glass-card" style="max-width: 380px; margin: 10px;">
+                    <div class="photo-frame"><img src="deepika.jpeg" alt="Bride"></div>
+                    <h2 class="gold-glow">Deepika</h2>
+                    <p>D/o Mr. Kamal Kishor Gandhi<br>& Mrs. Jyoti Gandhi</p>
+                </div>
+            </div>
+        </section>
         
-    </div>
-</section>
-        
-    </div>
-</section>
         <section id="functions">
             <h2 class="gold-glow center" style="font-size: 2.5rem; margin-bottom: 50px;">Ceremonies</h2>
             <div class="event-grid">
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Ganesh Pujan</h4><p>15 April, 9:00 AM<br>B/107, Omex city, Ratlam</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Mata Pujan</h4><p>18 April, 9:00 AM<br>B/107, Omex city, Ratlam</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Lunch</h4><p>18 April, 12:00 PM<br>Punjabi Samaj, Ratlam</p></div>
-                <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Kirtan</h4><p>18 April, 3:00 PM<br>B/107, Omex city, Ratlam</p></div>
+                <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Kirtan</h4><p>18 April, 3:00 PM<br>Punjabi Samaj, Ratlam</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Haldi</h4><p>19 April, 11:30 AM<br>Vikram Aditya Hotel, Ujjain	</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Mehndi</h4><p>19 April, 3:00 PM<br>Vikram Aditya Hotel, Ujjain</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Sangeet</h4><p>19 April, 7:00 PM<br>Vikram Aditya Hotel, Ujjain</p></div>
@@ -221,13 +218,13 @@
 
         <section id="aashirwad" class="center">
             <div class="glass-card" style="border-width: 3px; border-color: var(--gold);">
-                <h2 class="gold-glow" style="font-size: 3.5rem;">Aashirwad Samaroh</h2>
+                <h2 class="gold-glow" style="font-size: clamp(1.4rem, 6vw, 2.2rem); line-height: 1.2; letter-spacing: 2px;">Aashirwad Samaroh</h2>
                 <div style="font-size: 1.4rem; margin: 30px 0; line-height: 2;">
                     <p>📅 Monday, 20 April 2026</p>
                     <p>⏰ 7:00 PM Onwards</p>
                     <p>📍 Vikram Aditya Hotel, Ring Road, Ujjain</p>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Vikramaditya+Hotel+Ring+Road+Ujjain&query_place_id=ChIJVw26C_V0YzkR0c8z5qJ15Mk" target="_blank" class="btn-maps">Open in Google Maps</a>
+                <a href="http://googleusercontent.com/maps.google.com/3" target="_blank" class="btn-maps">Open in Google Maps</a>
             </div>
         </section>
 
@@ -273,11 +270,8 @@
             }, 800);
         }
 
-        // --- TOGGLE MUTE WITH ANIMATION ---
         function toggleMute() {
-            // GSAP Click Animation
             gsap.to("#play-btn", { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1 });
-
             if (music.volume > 0) {
                 lastVolume = music.volume;
                 music.volume = 0;
@@ -293,7 +287,6 @@
         function updateMusicIcon(iconName) {
             musicIcon.setAttribute("data-lucide", iconName);
             lucide.createIcons();
-            // Subtle Fade in for icon
             gsap.fromTo("#music-icon", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3 });
         }
 
@@ -304,7 +297,6 @@
             else updateMusicIcon("volume-2");
         });
 
-        // Background Particles
         particlesJS("particles-bg", {
             "particles": {
                 "number": { "value": 85, "density": { "enable": true, "value_area": 800 } },
