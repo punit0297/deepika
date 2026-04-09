@@ -94,7 +94,7 @@
             display: flex; align-items: center; gap: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
-        #play-btn { transition: transform 0.2s; }
+        #play-btn { transition: transform 0.2s; background: none; border: none; color: var(--gold); cursor: pointer; display: flex; align-items: center;}
         input[type=range] { accent-color: var(--gold); width: 80px; cursor: pointer; }
 
         .photo-frame {
@@ -110,11 +110,6 @@
         .event-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px; max-width: 1100px; margin: 0 auto;
-        }
-
-        .qr-card {
-            width: 250px; height: 250px; background: white; margin: 30px auto;
-            border: 8px solid var(--gold); border-radius: 15px; padding: 10px;
         }
 
         section { padding: 80px 20px; }
@@ -149,14 +144,14 @@
 
     <div id="loader">
         <div class="loader-text">Welcome to the Wedding...</div>
-        <div style="color: var(--gold); margin-top: 20px;">ॐ</div>
+        <div style="color: var(--gold); margin-top: 20px; font-size: 2rem;">ॐ</div>
     </div>
 
     <div id="particles-bg"></div>
     <div id="particles-front"></div>
 
     <div class="music-panel">
-        <button id="play-btn" onclick="toggleMute()" style="background:none; border:none; color:var(--gold); cursor:pointer; display: flex; align-items: center;">
+        <button id="play-btn" onclick="toggleMute()">
             <i data-lucide="volume-2" id="music-icon"></i>
         </button>
         <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.5">
@@ -188,9 +183,7 @@
                     <div class="gold-glow" style="font-size: 5rem; line-height: 1; margin-bottom: 10px; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));">
                         ☬
                     </div>
-                    <div class="gold-glow" style="letter-spacing: 8px; font-size: 1.5rem; font-weight: bold;">
-                        WEDS
-                    </div>
+                    <div class="gold-glow" style="letter-spacing: 8px; font-size: 1.5rem; font-weight: bold;">WEDS</div>
                 </div>
 
                 <div class="glass-card" style="max-width: 380px; margin: 10px;">
@@ -208,7 +201,7 @@
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Mata Pujan</h4><p>18 April, 9:00 AM<br>B/107, Omex city, Ratlam</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Lunch</h4><p>18 April, 12:00 PM<br>Punjabi Samaj, Ratlam</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Kirtan</h4><p>18 April, 3:00 PM<br>Punjabi Samaj, Ratlam</p></div>
-                <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Haldi</h4><p>19 April, 11:30 AM<br>Vikram Aditya Hotel, Ujjain	</p></div>
+                <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Haldi</h4><p>19 April, 11:30 AM<br>Vikram Aditya Hotel, Ujjain</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Mehndi</h4><p>19 April, 3:00 PM<br>Vikram Aditya Hotel, Ujjain</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Sangeet</h4><p>19 April, 7:00 PM<br>Vikram Aditya Hotel, Ujjain</p></div>
                 <div class="glass-card" style="padding: 1.5rem; margin: 0;"><h4>Sagan</h4><p>20 April, 11:30 AM<br>Vikram Aditya Hotel, Ujjain</p></div>
@@ -224,16 +217,16 @@
                     <p>⏰ 7:00 PM Onwards</p>
                     <p>📍 Vikram Aditya Hotel, Ring Road, Ujjain</p>
                 </div>
-                <a href="http://googleusercontent.com/maps.google.com/3" target="_blank" class="btn-maps">Open in Google Maps</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-maps">Open in Google Maps</a>
             </div>
         </section>
 
-        <section id="blessings" class="center">
-            <h2 class="gold-glow" style="font-size: 2.5rem;">Send Your Blessings</h2>
-            <div class="qr-card">
-                <img src="qr.jpeg" alt="QR Code" style="width:100%;">
+        <section id="save-date" class="center">
+            <div class="glass-card" style="border: 2px solid var(--gold);">
+                <h2 class="gold-glow" style="font-size: 2.5rem; margin-bottom: 15px;">Save The Date</h2>
+                <h3 class="couple-names" style="font-size: 4.5rem; margin: 10px 0;">20-4-2026</h3>
+                <p class="gold-glow" style="letter-spacing: 4px; font-weight: bold;">WE ARE GETTING MARRIED!</p>
             </div>
-            <p class="gold-glow">SCAN TO SEND LOVE</p>
         </section>
 
         <footer class="center" style="padding: 60px 20px;">
@@ -257,7 +250,7 @@
                 document.getElementById('entry-overlay').style.display = 'none';
                 document.getElementById('loader').style.display = 'flex';
                 
-                music.play().catch(e => console.log("Audio trigger needed"));
+                music.play().catch(e => console.log("Audio needs user interaction"));
 
                 setTimeout(() => {
                     document.getElementById('loader').style.opacity = '0';
@@ -297,6 +290,7 @@
             else updateMusicIcon("volume-2");
         });
 
+        // Background Particles
         particlesJS("particles-bg", {
             "particles": {
                 "number": { "value": 85, "density": { "enable": true, "value_area": 800 } },
@@ -308,6 +302,7 @@
             }
         });
 
+        // Floating Dust Particles
         particlesJS("particles-front", {
             "particles": {
                 "number": { "value": 150 },
@@ -321,8 +316,11 @@
 
         function startGSAP() {
             gsap.registerPlugin(ScrollTrigger);
+            
+            // Hero Animation
             gsap.from("#hero *", { opacity: 0, y: 50, duration: 2, stagger: 0.3, ease: "power4.out" });
 
+            // Card Animations
             gsap.utils.toArray('.glass-card').forEach(card => {
                 gsap.from(card, {
                     scrollTrigger: {
@@ -334,6 +332,7 @@
                 });
             });
 
+            // Photo Animation
             gsap.from(".photo-frame", {
                 scrollTrigger: { trigger: "#couple", start: "top 70%" },
                 rotate: 360, scale: 0, duration: 2, ease: "elastic.out(1, 0.5)"
